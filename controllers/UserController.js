@@ -22,7 +22,7 @@ const getUserData = (req,res)=>{
 const addUser = (req,res)=>{
 
 
-    const user = new UserSchema(req.body)
+    const user = new userSchema(req.body)
     user.save((err,data)=>{
         if(err){
             res.status(500).json({
@@ -148,9 +148,9 @@ const getUserById = (req,res)=>{
 }
 
 module.exports = {
+    getUserById,
     getUserData,
     addUser,
-    getUserById,
     deleteUser,
     updateUser,
     loginUser,
